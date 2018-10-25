@@ -12,7 +12,8 @@ public class Main{
 	public static void main(String[] args){
 		
 		Tabuleiro tabuleiro = new Tabuleiro(8,8);
-		EstiloTabuleiro estilo = new EstiloTabuleiro();
+		//EstiloTabuleiro estilo = new EstiloTabuleiro();
+		EstTabuleiro1 estilo = new EstTabuleiro1();
 
 		Peca pb1 = new Peao(Peca.BRANCA);
 		Peca pb2 = new Peao(Peca.BRANCA);
@@ -77,7 +78,7 @@ public class Main{
         Peca qp = new Rainha(Peca.PRETA);
         Peca kp = new Rei(Peca.PRETA);
 
-		tabuleiro.addPeca(pp1, 6, 0);
+		//tabuleiro.addPeca(pp1, 6, 0);
 		tabuleiro.addPeca(pp2, 6, 1);
 		tabuleiro.addPeca(pp3, 6, 2);
 		tabuleiro.addPeca(pp4, 6, 3);
@@ -98,7 +99,7 @@ public class Main{
         tabuleiro.addPeca(qp, 7, 3);
         tabuleiro.addPeca(kp, 7, 4);
 
-		//tp1.selecionar();
+		tp1.selecionar();
         //bp1.selecionar();
 
         //tb1.selecionar();
@@ -107,7 +108,10 @@ public class Main{
 		tabuleiro.atualizar();
 		
 		//para este exercício, estas duas linhas não devem ser mexidas.
-		DesenharTabuleiro saida = new DesenharTabuleiro();
-		saida.desenhar(tabuleiro, estilo);
+		//DesenharTabuleiro saida = new DesenharTabuleiro();
+		//saida.desenhar(tabuleiro, estilo);
+		estilo.setTabuleiro(tabuleiro);
+		estilo.processar();
+		estilo.desenhar();
 	}
 }
